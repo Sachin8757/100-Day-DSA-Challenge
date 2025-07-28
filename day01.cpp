@@ -31,7 +31,7 @@ You may assume that each input would have exactly one solution, and you may not 
 class Solution {
 public:
 vector<int> twoSum(vector<int>& nums, int target) {
-    int i=0;j=i+1;
+    int i=0; int j=i+1;
     vector<int> result;
     return helper(nums, target, i, j, result);
 
