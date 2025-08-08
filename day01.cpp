@@ -28,24 +28,29 @@ You may assume that each input would have exactly one solution, and you may not 
  Only one valid answer exists.
 */
 
-class Solution {
+class Solution
+{
 public:
-vector<int> twoSum(vector<int>& nums, int target) {
-    int i=0; int j=i+1;
-    vector<int> result;
-    return helper(nums, target, i, j, result);
-
-}
-vector<int> helper(vector<int>& nums, int target, int i, int j, vector<int>& result) {
-    if (i >= nums.size() || j >= nums.size()) {
-        return result; // No solution found
+    vector<int> twoSum(vector<int> &nums, int target)
+    {
+        int i = 0;
+        int j = i + 1;
+        vector<int> result;
+        return helper(nums, target, i, j, result);
     }
-    
-    if (nums[i] + nums[j] == target) {
-        result.push_back(i);
-        result.push_back(j);
-        return result;
-    } 
-    return helper(nums, target, i, j + 1, result); 
-}
+    vector<int> helper(vector<int> &nums, int target, int i, int j, vector<int> &result)
+    {
+        if (i >= nums.size() || j >= nums.size())
+        {
+            return result; // No solution found
+        }
+
+        if (nums[i] + nums[j] == target)
+        {
+            result.push_back(i);
+            result.push_back(j);
+            return result;
+        }
+        return helper(nums, target, i, j + 1, result);
+    }
 };
